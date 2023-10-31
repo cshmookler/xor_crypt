@@ -1,0 +1,14 @@
+[
+  {
+    "directory": "/home/main/.pack/cpp/xor_crypt/build",
+    "command": "clang++ -Ixorc.p -I. -I.. -fcolor-diagnostics -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu++20 -O3 -stdlib=libstdc++ -MD -MQ xorc.p/_home_main_.pack_cpp_xor_crypt_src_version.cpp.o -MF xorc.p/_home_main_.pack_cpp_xor_crypt_src_version.cpp.o.d -o xorc.p/_home_main_.pack_cpp_xor_crypt_src_version.cpp.o -c /home/main/.pack/cpp/xor_crypt/src/version.cpp",
+    "file": "/home/main/.pack/cpp/xor_crypt/src/version.cpp",
+    "output": "xorc.p/_home_main_.pack_cpp_xor_crypt_src_version.cpp.o"
+  },
+  {
+    "directory": "/home/main/.pack/cpp/xor_crypt/build",
+    "command": "clang++ -Ixorc.p -I. -I.. -fcolor-diagnostics -DNDEBUG -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=gnu++20 -O3 -stdlib=libstdc++ -MD -MQ xorc.p/_home_main_.pack_cpp_xor_crypt_src_main.cpp.o -MF xorc.p/_home_main_.pack_cpp_xor_crypt_src_main.cpp.o.d -o xorc.p/_home_main_.pack_cpp_xor_crypt_src_main.cpp.o -c /home/main/.pack/cpp/xor_crypt/src/main.cpp",
+    "file": "/home/main/.pack/cpp/xor_crypt/src/main.cpp",
+    "output": "xorc.p/_home_main_.pack_cpp_xor_crypt_src_main.cpp.o"
+  }
+]
