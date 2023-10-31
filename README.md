@@ -1,6 +1,6 @@
 # **XOR Crypt**
 
-A commmand-line utility for encrypting files using a one-time pad. Each bit in the input file is XOR'd with the cooresponding bit in the one-time pad.
+A command-line utility for encrypting files with a one-time pad. Each bit in the input file is XOR'd with the cooresponding bit in the one-time pad. 
 
 ## **Build and install this project with Conan (for Unix-like systems)**
 
