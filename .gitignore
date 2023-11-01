@@ -33,6 +33,9 @@
 *.out
 *.app
 
+# Build related files
+compile_commands.json
+
 #--------------------------------    Python    --------------------------------#
 
 # Byte-compiled / optimized / DLL files
