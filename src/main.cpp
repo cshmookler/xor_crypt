@@ -1,7 +1,6 @@
 // Standard includes
 #include <array>
 #include <exception>
-#include <ios>
 #include <fstream>
 #include <iostream>
 #include <span>
@@ -15,7 +14,7 @@ constexpr std::string_view proper_usage = {
     "\n"
     "   xorc --help\n"
     "   xorc --version\n"
-    "   xorc <input_file> <output_file> [--pad <path_to_pad>] [--pos "
+    "   xorc <input_file> <output_file> [--pad=<path_to_pad>] [--pos="
     "<position_in_pad>]\n\n"
 };
 
