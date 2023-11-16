@@ -15,9 +15,11 @@ Diagnostics:
     UnusedIncludes: Strict
 ---
 InlayHints:
-    Designators: Yes
+    Enabled: Yes
     ParameterNames: Yes
     DeducedTypes: Yes
----
+    Designators: Yes
+    BlockEnd: Yes
+# ---
 Hover:
     ShowAKA: Yes
