@@ -17,6 +17,7 @@ required_conan_version = ">=2.0.6"
 @dataclass
 class MesonDependency:
     """Meson dependency information"""
+
     package_name: str
     component_name: str
     version: str
@@ -36,7 +37,7 @@ class xor_crypt(ConanFile):
     topics = []
 
     # Configuration
-    package_type = "application" 
+    package_type = "application"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
@@ -50,7 +51,7 @@ class xor_crypt(ConanFile):
     _generator_folder = join_path(_build_folder, "generators")
 
     # Other
-    _dependencies: List[str] = []
+    _dependencies: List[str] = ["gtest/1.14.0"]
 
     def set_version(self):
         """Get project version from Git"""
@@ -151,6 +152,7 @@ class xor_crypt(ConanFile):
             self.build_folder,
             self.source_folder,
         )
+        meson.test()
 
     def package(self):
         """Install project headers and compiled libraries"""
@@ -161,4 +163,3 @@ class xor_crypt(ConanFile):
         """Package information"""
         self.cpp_info.libs = [self.name]
         self.cpp_info.includedirs = ["include"]
-

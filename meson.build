@@ -39,24 +39,28 @@ conf_data = configuration_data()
 conf_data.set('version', project_version)
 configure_file(
     configuration : conf_data,
-    input : 'src' / 'version.hpp.in',
+    input : src_dir / 'version.hpp.in',
     output : 'version.hpp',
 )
 
-headers = files(
-    build_dir / 'version.hpp',
-    # Add additional header files here.
-)
-sources = files(
-    src_dir / 'version.cpp',
-    # Add additional source files here.
-)
-
-sources += src_dir / 'main.cpp'
-xor_crypt = executable(
+executable(
     'xorc',
-    sources,
+    files(src_dir / 'version.cpp', src_dir / 'main.cpp'),
     dependencies : project_deps,
     install : true,
 )
+
+tests = [
+    [ 'version', files(src_dir / 'version.test.cpp'), project_deps ],
+    # Add additional tests here.
+]
+
+foreach test : tests
+    test_exec = executable(
+        test[0], # name
+        test[1], # source files
+        dependencies : test[2], # dependencies
+    )
+    test(test[0], test_exec)
+endforeach
 
