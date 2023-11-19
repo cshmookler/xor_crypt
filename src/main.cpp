@@ -178,8 +178,6 @@ crypt_t get_crypt_args(const std::span<char*>& in_cmd_arg) {
         }
 
         switch (found_opt.id) {
-            case opt_id::none:
-                throw std::runtime_error("Error: Invalid option.\n");
             case opt_id::help: crypt.show_help = true; return crypt;
             case opt_id::version: crypt.show_version = true; return crypt;
             case opt_id::pad:
@@ -191,7 +189,7 @@ crypt_t get_crypt_args(const std::span<char*>& in_cmd_arg) {
                 crypt.pad.pos = strtol(arg.data(), nullptr, 10);
                 if (crypt.pad.pos < 0) {
                     throw std::runtime_error(
-                        "Error: Pad position cannot be negative\n");
+                        "Error: Pad position cannot be negative.\n");
                 }
                 found_opt = default_opt;
                 continue;

@@ -50,12 +50,12 @@ executable(
     install : true,
 )
 
-tests = [
+source_tests = [
     [ 'version', files(src_dir / 'version.test.cpp'), project_deps ],
-    # Add additional tests here.
+    [ 'xorc_test', files(src_dir / 'main.test.cpp'), project_deps ],
 ]
 
-foreach test : tests
+foreach test : source_tests
     test_exec = executable(
         test[0], # name
         test[1], # source files
