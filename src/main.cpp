@@ -193,7 +193,7 @@ crypt_t get_crypt_args(const std::span<char*>& in_cmd_arg) {
                 }
                 found_opt = default_opt;
                 continue;
-            default: throw std::runtime_error("Error: Invalid option id.\n");
+            default: throw std::runtime_error("Error: Invalid option.\n");
         }
     }
 

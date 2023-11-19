@@ -75,6 +75,10 @@ TEST(xorc, NegativePadPosition) {
         "./xorc arg1 arg2 --pos=-1", "Error: Pad position cannot be negative.");
 }
 
+TEST(xorc, InvalidOption) {
+    test_cmd("./xorc arg1 arg2 --opt", "Error: Invalid option.");
+}
+
 TEST(xorc, EncryptTestFile) {
     File input("test_input");
     File output("pad.key");
