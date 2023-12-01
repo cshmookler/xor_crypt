@@ -48,7 +48,8 @@ class file_r {
             this->close_();
         }
         this->stream_.open(
-            path.data(), openmode::_S_in | openmode::_S_bin | openmode::_S_ate);
+                path.data(),
+                openmode::_S_in | openmode::_S_bin | openmode::_S_ate);
         if (! this->stream_.is_open()) {
             throw std::runtime_error("Failed to open file for reading.\n");
         }
@@ -154,7 +155,7 @@ crypt_t get_crypt_args(const std::span<char*>& in_cmd_arg) {
                 case 1: crypt.output = arg; break;
                 default:
                     throw std::runtime_error(
-                        "Error: Too many positional arguments.\n");
+                            "Error: Too many positional arguments.\n");
             }
 
             ++cmd_arg_i;
@@ -167,10 +168,9 @@ crypt_t get_crypt_args(const std::span<char*>& in_cmd_arg) {
                 if (arg.rfind(opt.name) == 0) {
                     found_opt = opt;
                     arg = arg.substr(
-                        opt.name.size(), arg.size() - opt.name.size());
+                            opt.name.size(), arg.size() - opt.name.size());
                 }
-            }
-            else {
+            } else {
                 if (arg == opt.name) {
                     found_opt = opt;
                 }
@@ -189,7 +189,7 @@ crypt_t get_crypt_args(const std::span<char*>& in_cmd_arg) {
                 crypt.pad.pos = strtol(arg.data(), nullptr, 10);
                 if (crypt.pad.pos < 0) {
                     throw std::runtime_error(
-                        "Error: Pad position cannot be negative.\n");
+                            "Error: Pad position cannot be negative.\n");
                 }
                 found_opt = default_opt;
                 continue;
